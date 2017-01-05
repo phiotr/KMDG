@@ -34,10 +34,10 @@ def convert2roman(n):
 ### TEST MODUŁU
 if __name__ == "__main__":
 
-    print convert2roman(19)
-    print convert2roman(6)
-    print convert2roman(2)
-    print convert2roman(133)
-    print convert2roman(200)
-    print convert2roman(888)
-    print convert2roman(134)
+    print(convert2roman(19))
+    print(convert2roman(6))
+    print(convert2roman(2))
+    print(convert2roman(133))
+    print(convert2roman(200))
+    print(convert2roman(888))
+    print(convert2roman(134))

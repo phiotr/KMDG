@@ -74,7 +74,7 @@ def gallery_pre_delete_handler(sender, **kwargs):
         for ph in photos:
             ph.delete()
     except:
-        print "Kasowanie pustej galerii"
+        print("Kasowanie pustej galerii")
 
 
 class PhotoModel(models.Model):

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 # -*- coding: utf8 -*-
 """
 Moduł poświęcony skalowaniu plików graficznych
@@ -16,9 +16,9 @@ def is_image(some_file):
 
     except IOError as e:
         # plik nie istnieje, albo jakies inne klopoty
-        print e
+        print(e)
     finally:
-        return False
+        return(False)
 
 
 def create_thumbnail(src_image, out_image, scale):
@@ -35,7 +35,7 @@ def create_thumbnail(src_image, out_image, scale):
         img.thumbnail(scale, Image.ANTIALIAS)
 
     except Exception as e:
-        print e
+        print(e)
 
     else:
         img.save(out_image)

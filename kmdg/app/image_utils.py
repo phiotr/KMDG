@@ -3,8 +3,11 @@
 """
 Moduł poświęcony skalowaniu plików graficznych
 """
+try:
+    import Image
+except ImportError:
+    import PIL as Image
 
-import Image
 import imghdr
 
 

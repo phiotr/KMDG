@@ -1,0 +1,27 @@
+@media screen {
+    body {
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFDD0), to(#FFF));
+        background: -webkit-linear-gradient(top, #FFFDD0, #FFF);
+        background: -moz-linear-gradient(top, #FFFDD0, #FFF);
+        background: -ms-linear-gradient(top, #FFFDD0, #FFF);
+        background: -o-linear-gradient(top, #FFFDD0, #FFF);
+        background-size: 100% 550px;
+        background-repeat: no-repeat;
+    }
+    header {
+        background:url('/static/images/425.png') #D2373C;
+        background-repeat: no-repeat;
+        background-size: 100% 150px;
+    }
+    header h1 {color: #FAE146;}
+    nav ul li {background: #dc3236;}
+    nav ul li:hover {background: #b92328;}
+    p.error, .skin-color {color: #D2373C;}/*taki sam jak header bg*/
+    div.pagination span.current-page {color: #b92328;} /* taki sam jak nav li:hover bg*/
+    div.pagination a, div.pagination a:visited {color: #dc3236;border: 1px solid #dc3236;background: #FFFDD0;}/*col taki sam jak nav li bg, bg takie jak body*/
+    div.pagination a:hover {color: #FFF;background:#b92328;}/*bg takie samo jak nav li:hover bg*/
+    article a:link, article a:visited {color:#b92328;}/*taki sam jak nav li:hover bg*/
+    table.colored th {color:white; background:#dc3236;}/* taki samo jak nav li bg*/
+    table.colored tr:nth-child(even){background:#FFFDD0;}/* ten sam co bg */
+
+} /* END MEDIA SCREEN */

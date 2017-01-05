@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h2 class="center skin-color">Witamy na stronie Koła Miłośników Dziejów Grudziądza</h2>
+
+<section>
+    {% for n in news %}
+        {% if forloop.first %}<h3>Aktualności:</h3>{% endif %}
+        <span class="date">{{ n.date }}</span>
+        <div class='simplebox'>
+           {{ n.description|safe }}
+        </div>
+
+        {% if forloop.last %}
+            <span class="goto"><a href="/aktualnosci/">Czytaj więcej &raquo;</a></span>
+            <hr/>
+        {% endif %}
+    {% endfor %}
+</section>
+
+<section>
+    {% for event in events %}
+    {% if forloop.first %}
+    <h3>Najbliższe spotkania:</h3>
+    <table id="upcoming" class="maxwidth noborder">
+    {% endif %}
+        <tr>
+            <td style="width:180px;"><strong class="skin-color strong" style="font-size:20px;" title="{{ event.date|date:'l, d.m.Y' }}">{{ event.date|date:'d E' }}</strong></td>
+            <td><b>{{ event.referent }}</b>:&nbsp;&nbsp;<i>&bdquo;{{event.title}}&ldquo;</i></td>
+            <td class="right" style="width:60px;">
+                {% if event.has_bulletin %}
+                <a class="goto" title="Przejdź do biuletynu" href="/publikacje/biuletyny/numer/{{ event.get_bulletin.get_number }}">(#{{ event.number_of_meeting }})</a>
+                {% else %}
+                <span class="meeting" title="Numer spotkania">(#{{ event.number_of_meeting }})</span>
+                {% endif %}
+            </td>
+        </tr>
+    {% if forloop.last %}</table><hr/>{% endif %}
+    {% endfor %}
+</section>
+
+<section>
+    <h3>O nas:</h3>
+    <p>Koło Miłośników Dziejów Grudziądza (KMDG) zostało założone 24 września 1986 r. Zebranie organizacyjne odbyło się w Klubie "Pinokio" Spółdzielni Mieszkaniowej w Grudziądzu, ul. Mikołaja z Ryńska 10. Wzięło w nim udział 20 osób. Dziś Koło liczy ponad 120 osób.</p>
+    <p>Zebrani wybrali spośród siebie <a href="/zarzad/">Zarząd KMDG</a>. Ustalono, że zebrania Koła będą się odbywać w środy, 2-3 razy w miesiącu, w sali wymienionego Klubu „Pinokio". Opracowany też został program działalności KMDG, którego głównym zadaniem będzie popularyzacja dziejów Grudziądza i regionu grudziądzkiego, przez organizowanie odczytów, spotkań informacyjno - dyskusyjnych, wieczorów autorskich, wieczorów wspomnień i sesji popularnonaukowych. Obecnie Koło działa w Klubie „Centrum” Spółdzielni Mieszkaniowej przy ul. Moniuszki 13, a spotkania odbywają się w każdą środę.</p>
+    <p>Od 1 stycznia 1987 r. KMDG należy jako członek zbiorowy do <a href="http://www.gtk.grudziadz.pl/" target="_blank">Grudziądzkiego Towarzystwa Kultury</a>.</p>
+    <p>W dniu 11 listopada 1987 r. przy KMDG została utworzona Grupa Autorów i Prelegentów, składająca się z 15 osób. Dziś grupa ta liczy prawie 100 osób. Przy Kole działa również Rada Redakcyjna KMDG zajmująca się działalnością wydawniczą. Plonem tej działalności jest wciąż rozwijająca się <a href="/publikacje/ksiazki/">Biblioteka KMDG</a> oraz zbiór <a href="/publikacje/biuletyny/">biuletynów</a> wydawanych przy okazji każdej prelekcji.</p>
+</section>
+{% endblock %}

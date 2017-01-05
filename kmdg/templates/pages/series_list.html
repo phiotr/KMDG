@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    {% for se, ents in series %}
+    <section>
+        <h3>{{se.name}}</h3>
+        
+        <table class="maxwidth colored">
+            <tr>
+                <th style="width: 10%;" title="Numer w cyklu">Numer</th>
+                <th style="width: 20%;">Autor</th>
+                <th>Tytuł</th>
+                <th style="width: 15%;">Liczba stron</th>
+            </tr>
+            {% for e in ents %}
+            <tr>
+                <td class="center">{{e.number}}</td>
+                <td>{{e.author}}</td>
+                <td>{{e.title}}</td>
+                <td class="center">{{e.pages}}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4"><p class="error">Nie umieszczono jeszcze żadnej pozycji w tym cyklu.</p></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+    {% empty %}
+    <section>
+        <h2>Cylkle zamknięte</h2>
+        <p class="error">Nie opublikowano jeszcze żadnych cykli</p>
+        <br/><br/>
+    </section>
+    {% endfor %}
+    <section>
+        Zachęcamy również do zapoznania się z naszymi <a href="/publikacje/biuletyny/">biuletynami</a> oraz <a href="/publikacje/ksiazki/">książkami</a>.
+    </section>  
+{% endblock %}

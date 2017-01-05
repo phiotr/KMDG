@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h2>Lista biuletynów z {{year}} roku</h2>
+    {% include 'pages/bulletins_table.html' %}
+
+    <section>
+        <h3  class="pagination-header">Pozostałe roczniki</h3>
+        {% include 'pages/bulletins_pagination_years.html' %}
+    </section>
+{% endblock %}

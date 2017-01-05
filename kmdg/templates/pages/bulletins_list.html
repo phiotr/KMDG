@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <section>
+        <h3>Ostatnio wydane:</h3>
+        <ol>
+            {% for last in lastest %}<li><b title="Numer: {{last.number}}, data publikacji: {{last.publication|date:'d.m.Y'}}, data odczytu: {{last.reading|date:'d.m.Y'}}">{{last.referent}}</b> - <a title="Przejdź do biuletynu" href="{% filter force_escape %}/publikacje/biuletyny/numer/{{last.get_number}}/{% endfilter %}">{{last.title}}</a></li>
+            {% endfor %}
+        </ol>
+    </section>
+
+    <section>
+        <h3 class="pagination-header">Przeglądaj biuletyny według studium wiedzy</h3>
+        {% include 'pages/bulletins_pagination_tags.html' %}
+    </section>
+
+    <section>
+        <h3 class="pagination-header">Bądź według roczników</h3>
+        {% include 'pages/bulletins_pagination_years.html' %}
+    </section>
+{% endblock %}

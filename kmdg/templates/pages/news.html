@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load paging %}
+
+{% block content %}
+<h2>Aktualności</h2>
+    
+    {% for news in news_page.object_list %}
+    <section>    
+        <span class="date">{{ news.date }}</span>
+        <div class="box">
+           {{ news.description|safe }}
+        </div>
+        <br/>
+    </section>
+    {% empty %}
+    <hr/><br/>
+    <p class="error">Nie opublikowano jeszcze żadncyh aktualności. Wróć do strony <a href="/">głównej</a>.</p>
+    {% endfor %}
+    
+    {% insert_pagination news_page '/aktualnosci' %}
+{% endblock %}

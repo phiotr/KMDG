@@ -1,0 +1,5 @@
+<div class="pagination">
+    {% for y in years %}
+        {% if y == year %}<span class="current-page">[ {{y}} ]</span>{% else %}<a href="/publikacje/biuletyny/rok/{{y}}/">{{y}}</a>{% endif %}
+    {% endfor %}
+</div>

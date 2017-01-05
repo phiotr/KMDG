@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div id="bulletin-body">
+        <table class="noborder maxwidth"  style="table-layout: fixed;">
+            <tbody>
+                <tr>
+                    <td rowspan="3" class="logo"><img src="{{STATIC_URL}}images/kmdg_logo.png" alt="Logo KMDG"/></td>
+                    <th colspan="2" class="bulletin-h2">BIULETYN</th>
+                    <td rowspan="3" class="logo right">{% if bulletin.cover %}<img src="{{ bulletin.cover.url }}" alt="Okładka numeru"/>{% endif %}</td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="bulletin-h3">KOŁA MIŁOŚNIKÓW DZIEJÓW GRUDZIĄDZA</th>
+                </tr>
+                <tr>
+                    <td colspan="2" class="bulletin-h4 center">KLUB „CENTRUM” SPÓŁDZIELNI MIESZKANIOWEJ</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="left">Rok {{ bulletin.display_year }}</td>
+                    <td colspan="2" class="right">Numer {{ bulletin.display_number }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="left" style="width:50%;">Data odczytu: {{ bulletin.reading|date:"d.m.Y"}}</td>
+                    <td colspan="2" class="right">Data wydania: {{ bulletin.publication|date:"d.m.Y" }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr/>
+
+        <table class="noborder maxwidth">
+            <tbody>
+                <tr>
+                    <td class="left author">{{ bulletin.referent }}</td>
+                    <td class="right meeting">{% if bulletin.number_of_meeting %}{{ bulletin.number_of_meeting }}. spotkanie{% endif %}</td>
+                </tr>
+            </tbody>
+        </table><br/>
+        
+        <h1 class="center">{{ bulletin.title }}</h1>
+<!-- TRESC BIULETYNU -->
+        {{ bulletin.content|safe }}
+<!-- KONIEC BIULETYNU -->
+        <br/><hr/>
+        <p class="summary"><b>Redakcja:&nbsp;</b>{% for editor in bulletin.editors.all %}{{ editor }}, {% endfor %}KMDG. Logo KMDG wykonał Grzegorz Rygielski.</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,3 @@
+label[for="id_description"], label[for="id_content"] {clear: both;float:none;}
+ul li{list-style:none;}
+a#add_id_editors{display:none;}

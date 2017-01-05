@@ -1,0 +1,9 @@
+<div>
+    {% for t in tags %}
+    {% if forloop.first %}<ol>{% endif %}
+        <li><a href="/publikacje/biuletyny/studium/{{t.tag_name.split|join:'%20'}}/">{{t}}</a></li>
+    {% if forloop.last %}</ol>{% endif %}
+    {% empty %}
+        <p class="error">Nie zdefiniowano dotąd żadnych kategorii.</p>
+    {% endfor %}
+</div>

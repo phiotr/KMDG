@@ -1,0 +1,9 @@
+<div class="pagination">
+{% for p_nr in page.paginator.page_range %}
+    {% if p_nr == page.number %}
+        <span class="current-page" title="Bieżąca strona">[ {{p_nr}} ]</span>
+    {% else %}
+        <a href="{{prefix}}/{{p_nr}}">{{p_nr}}</a>
+    {% endif %}
+{% endfor %}
+</div>

@@ -1,0 +1,23 @@
+<section>
+    <table class="maxwidth  colored">
+        <tr>
+            <th style="width:10%">Numer</th>
+            <th style="width:20%">Autor</th>
+            <th style="width:15%">Data wydania</th>
+            <th>Temat</th>
+        </tr>
+
+        {% for blt in bulletins %}
+        <tr>
+            <td class="center"><a href="/publikacje/biuletyny/numer/{{blt.get_number}}/">{{blt.display_number}}</a></td>
+            <td>{{blt.referent}}</td>
+            <td class="center">{% if year %}{{blt.publication|date:"d E"}}{% else %}{{blt.publication|date:"d.m.Y"}}{% endif %}</td>
+            <td>{{blt.title}}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4"><p class="error">Brak biuletynów</p></td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>

@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h2>&bdquo;{{tag}}&rdquo;</h2>
+    {% include 'pages/bulletins_table.html' %}
+    
+    <section>
+        <h3  class="pagination-header">Pozostałe tematyki</h3>
+        {% include 'pages/bulletins_pagination_tags.html' %}
+    </section>
+{% endblock %}

@@ -1,0 +1,11 @@
+*.pyc
+__pycache_
+virtenv.sh
+settings.py
+database.sqlite
+/kmdg/settings.py
+/kmdg/database.sqlite
+/kmdg/media/storage/
+/kmdg/media/covers/
+/kmdg/media/gallery/
+/kmdg/static/js/ckeditor/

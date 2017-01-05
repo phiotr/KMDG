@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h2>Fotogalerie KMDG</h2>
+
+    {% for gallery in galleries %}
+    <section>
+        <span class="date" title="Data utworzenia">{{ gallery.create_date }}</span>
+
+        <div class="box">
+            <table>
+                <tr>
+                    <td rowspan="2" class="gallery-cover">{{ gallery.get_gallery_cover|safe }}</td>
+                    <th><a href="/galerie/{{gallery.id}}/">{{ gallery.title }}</a> <i>({{gallery.photo_count}} zdjęć)</i></th>
+                </tr>
+                <tr>
+                    <td class="left">{{gallery.description|safe }}</td>
+                </tr>
+            </table>
+        </div> <!-- END OF BOX -->
+        <br/>
+    </section>
+    {% empty %}
+        <p class="error">Przepraszamy, nie utworzono jeszcze żadnej galerii. Prosimy odwiedzić tę stronę w późniejszym terminie.</p>
+    {% endfor %}
+{% endblock %}

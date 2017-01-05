@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block extrahead %}
+    <link href="{{STATIC_URL}}images/favicon.png" rel="shortcut icon"/>
+{% endblock %}
+
+{% block title %}{{ title }} | Koło miłośników dziejów Grudziądza{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="/"><img src="{{STATIC_URL}}images/kmdg_logo_small.png" height="42px" width="32px"/></a>
+    Koło miłośników dziejów Grudziądza</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

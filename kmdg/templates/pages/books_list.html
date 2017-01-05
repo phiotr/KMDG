@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h2>Biblioteka KMDG</h2>
+    <section>
+        <table class="maxwidth  colored">
+            <tr>
+                <th style="width: 8%;" title="Numer tomu">Numer</th>
+                <th style="width: 17%;">Autor</th>            
+                <th style="width: 35%;">Tytuł</th>
+                <th style="width: 10%;" title="Rok wydania">Rok</th>
+                <th style="width: 16%;">ISBN</th>
+                <th style="width: 14%;">Liczba stron</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td class="center">{{book.number}}</td>
+                <td>{{book.author}}</td>
+                <td class="center">{{book.title}}</td>
+                <td class="center">{{book.publication}}</td>
+                <td>{{book.isbn}}</td>
+                <td class="center">{{book.pages}}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6"><p class="error">Nie opublikowano jeszcze żadnych książek</p></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br/>
+    </section>
+    <section>
+        Zachęcamy również do zapoznania się z naszymi <a href="/publikacje/biuletyny/">biuletynami</a> oraz <a href="/publikacje/cykle/">cyklami zamkniętymi</a>.
+    </section>
+{% endblock %}

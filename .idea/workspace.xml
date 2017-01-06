@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c099b5f-f697-4ac4-8d3b-4fa0b7e5b1de" name="Default" comment="Use PIL when python">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="9c099b5f-f697-4ac4-8d3b-4fa0b7e5b1de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kmdg/publications/urls.py" afterPath="$PROJECT_DIR$/kmdg/publications/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kmdg/publications/views.py" afterPath="$PROJECT_DIR$/kmdg/publications/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kmdg/urls.py" afterPath="$PROJECT_DIR$/kmdg/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kmdg/templates/admin/base_site.html" afterPath="$PROJECT_DIR$/kmdg/templates/admin/base_site.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kmdg/templates/main/base.html" afterPath="$PROJECT_DIR$/kmdg/templates/main/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kmdg/templates/pages/gallery.html" afterPath="$PROJECT_DIR$/kmdg/templates/pages/gallery.html" />
     </list>
     <ignored path="kmdg.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +28,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kmdg/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+            <state relative-caret-position="763">
+              <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
               <folding>
                 <element signature="e#43#75#0" expanded="true" />
               </folding>
@@ -39,11 +37,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kmdg/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+            <state relative-caret-position="345">
+              <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gallery.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kmdg/templates/pages/gallery.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_site.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kmdg/templates/admin/base_site.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kmdg/templates/main/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4855">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -95,7 +123,11 @@
         <option value="$PROJECT_DIR$/kmdg/app/__init__.py" />
         <option value="$PROJECT_DIR$/kmdg/publications/views.py" />
         <option value="$PROJECT_DIR$/kmdg/publications/urls.py" />
+        <option value="$PROJECT_DIR$/kmdg/templates/main/base.html" />
         <option value="$PROJECT_DIR$/kmdg/urls.py" />
+        <option value="$PROJECT_DIR$/kmdg/settings.py" />
+        <option value="$PROJECT_DIR$/kmdg/templates/pages/gallery.html" />
+        <option value="$PROJECT_DIR$/kmdg/templates/admin/base_site.html" />
       </list>
     </option>
   </component>
@@ -158,6 +190,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kmdg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -376,7 +474,21 @@
       <option name="project" value="LOCAL" />
       <updated>1483654153185</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Migration from Django 1.5 to Django 1.10">
+      <created>1483725487743</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1483725487743</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Migration from Django 1.5 to Django 1.10">
+      <created>1483727664374</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1483727664374</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -445,7 +557,8 @@
     <MESSAGE value="Migration to python3" />
     <MESSAGE value="Use PIL when python-image module is not available" />
     <MESSAGE value="Migration to Python3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migration to Python3" />
+    <MESSAGE value="Migration from Django 1.5 to Django 1.10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migration from Django 1.5 to Django 1.10" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -454,31 +567,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/kmdg/gallery/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#58#67#0" expanded="true" />
-            <element signature="e#944#961#0" expanded="false" />
-            <element signature="e#998#1131#0" expanded="false" />
-            <element signature="e#1174#1482#0" expanded="false" />
-            <element signature="e#2611#2762#0" expanded="false" />
-            <element signature="e#2801#2948#0" expanded="false" />
-            <element signature="e#3080#3727#0" expanded="false" />
-            <element signature="e#3776#4176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kmdg/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kmdg/templates/main/pagination.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -737,13 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kmdg/templates/main/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kmdg/templates/pages/bulletins_pagination_tags.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -855,6 +936,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kmdg/templates/main/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4855">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kmdg/publications/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -867,8 +956,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kmdg/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        <state relative-caret-position="763">
+          <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
           <folding>
             <element signature="e#43#75#0" expanded="true" />
           </folding>
@@ -877,8 +966,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kmdg/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+        <state relative-caret-position="345">
+          <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kmdg/templates/pages/gallery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kmdg/templates/admin/base_site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
           <folding />
         </state>
       </provider>

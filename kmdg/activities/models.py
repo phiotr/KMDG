@@ -22,6 +22,9 @@ class CalendarModel(models.Model):
     def __unicode__(self):
         return u"Spotkanie {0}".format(self.date)
 
+    def __str__(self):
+        return self.__unicode__()
+
     def is_upcoming(self):
         """Flaga okreslajaca czy dane spotkanie jest przyszle, czy minone"""
         return self.date >= today()
@@ -63,6 +66,9 @@ class NewsModel(models.Model):
 
     def __unicode__(self):
         return u"{0}".format(self.date)
+
+    def __str__(self):
+        return self.__unicode__()
 
     def preview(self):
         return html_preview(self.description, 100) + "(...)"

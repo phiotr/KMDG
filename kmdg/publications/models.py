@@ -39,6 +39,9 @@ class TagModel(models.Model):
     def __unicode__(self):
         return self.tag_name
 
+    def __str__(self):
+        return self.__unicode__()
+
     def bulletins_count(self):
         return 0
 
@@ -58,6 +61,8 @@ class EditorModel(models.Model):
     def __unicode__(self):
         return u"{0} {1}".format(self.first_name, self.last_name)
 
+    def __str__(self):
+        return self.__unicode__()
 
     def full_name(self):
         return u"{0} {1}".format(self.first_name, self.last_name)
@@ -106,6 +111,9 @@ class BulletinModel(models.Model):
         """Reprezentacja tekstowa"""
         return self.display_number() + " / " + self.display_year()
 
+    def __str__(self):
+        return self.__unicode__()
+
     def get_number(self):
         """Zwraca numer biuletynu służący do konstrukcji adresu url"""
         return "{0}.{1}".format(self.number_in_year, self.number)
@@ -120,7 +128,7 @@ class BulletinModel(models.Model):
         y = self.publication.year
         r = convert2roman(y - settings.FIRST_BULLETIN_AT_YEAR + 1)
 
-        return r + ': ' + unicode(y)
+        return u'{}: {}'.format(r, y)
 
     def thumbnail(self):
         """Miniaturka okladki wyswietlana na liscie w panelu administracyjnym"""
@@ -210,6 +218,9 @@ class StorageModel(models.Model):
     def __unicode__(self):
         return os.path.basename(self.any_file.path)
 
+    def __str__(self):
+        return self.__unicode__()
+
     def icon(self):
         return """<a href="{0}" target="_blank"><img src="/static/icons/{1}"/></a>""".format(self.url(), get_icon_by_extension(self.any_file.file.name))
 
@@ -263,6 +274,9 @@ class BookModel(models.Model):
     def __unicode__(self):
         return self.title
 
+    def __str__(self):
+        return self.__unicode__()
+
     class Meta:
         verbose_name = u"Książkę"
         verbose_name_plural = u"Książki"
@@ -275,6 +289,9 @@ class SeriesModel(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def __str__(self):
+        return self.__unicode__()
 
     def entries_count(self):
         return SeriesEntryModel.objects.filter(series=self).count()
@@ -302,6 +319,9 @@ class SeriesEntryModel(models.Model):
 
     def __unicode__(self):
         return u"{0} / {1} / {2}".format(self.title, self.author, self.pages)
+
+    def __str__(self):
+        return self.__unicode__()
 
     class Meta:
         verbose_name = u"Pozycja"

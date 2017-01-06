@@ -10,7 +10,7 @@ from ..app.image_utils import create_thumbnail
 from ..app.media_utils import get_absolute_path_of_file
 
 from django.db import models
-from django.db.models.signals import pre_save, post_save, post_delete, pre_delete
+from django.db.models.signals import pre_save, post_save, pre_delete
 from django.dispatch import receiver
 
 
@@ -37,6 +37,9 @@ class GalleryModel(models.Model):
     def __unicode__(self):
         return self.title
 
+    def __str__(self):
+        return self.__unicode__()
+
     def photo_count(self):
         """Metoda zwraca ilosc przypietych fotografii do tej galerii"""
         return PhotoModel.objects.filter(gallery__id=self.id).count()
@@ -47,7 +50,7 @@ class GalleryModel(models.Model):
         try:
             first_url = PhotoModel.objects.filter(gallery=self.pk)[0].thumb.url
 
-        except Exception as e:
+        except Exception:
             first_url = NO_PHOTOS_IN_URL
 
         return """<img src="{0}" alt="Okładka"/>""".format(first_url)
@@ -93,6 +96,9 @@ class PhotoModel(models.Model):
             uni = "Obrazek"
         finally:
             return uni
+
+    def __str__(self):
+        return self.__unicode__()
 
     def display_thumb(self):
         if self.thumb:

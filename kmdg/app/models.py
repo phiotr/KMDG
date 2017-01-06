@@ -23,8 +23,10 @@ class SkinModel(models.Model):
     description = models.CharField(verbose_name=u"Krótki opis", max_length=100, blank=True, null=True)
 
     def __unicode__(self):
-        """Reprezentacja tekstowa"""
         return str(self.pk) + ") " + SKINS[self.skin] + "({0}, {1})".format(self.start, self.stop)
+
+    def __str__(self):
+        return self.__unicode__()
 
     def is_actual(self):
         """Czy dana skorka obowiazuje"""

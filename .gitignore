@@ -9,3 +9,4 @@ database.sqlite
 /kmdg/media/covers/
 /kmdg/media/gallery/
 /kmdg/static/js/ckeditor/
+/.idea/

@@ -1,6 +1,7 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block content %}
-    <p class="error-code">4<img src="{{STATIC_URL}}images/sad.png" alt="0"/>4</p>
+    <p class="error-code">4<img src="{% static 'images/sad.png' %}" alt="0"/>4</p>
     <p class="error">Ups... Strona o podanym adresie nie istnieje. {% include 'pages/error_hint.html' %}</p>    
 {% endblock %}

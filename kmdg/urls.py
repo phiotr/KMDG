@@ -8,7 +8,6 @@ from django.views import static, generic
 from django.contrib import admin
 from django.contrib import auth
 from django.conf.urls import include, url
-#from django.conf.urls.static import static
 from .app import views as app_views
 from .activities import views as activities_views
 from .gallery import views as gallery_views
@@ -16,9 +15,9 @@ from .gallery import views as gallery_views
 
 admin.autodiscover()
 
-# Obsluga bledow
-# handler404 = app_views.view_404
-# handler500 = app_views.view_500
+# Error handlers
+handler404 = app_views.view_404
+handler500 = app_views.view_500
 
 print(settings.STATIC_ROOT)
 urlpatterns = [
@@ -39,7 +38,7 @@ urlpatterns = [
 
     url(r'^zarzad/$', app_views.view_administration),
 
-    # Pliki
+    # Files
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}),
 ]

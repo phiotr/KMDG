@@ -31,7 +31,6 @@ def view_bulletins_list(request):
         lastest = BulletinModel.objects.all().order_by('-publication')[:3]
 
     except Exception as e:
-        print e
         lastest = None
 
     c = RequestContext(request, {'sitetitle': u'Biuletyny', 'years': years_list(), 'lastest': lastest, 'tags': tags_list()})

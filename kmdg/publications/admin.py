@@ -26,7 +26,7 @@ class BulletinAdmin(admin.ModelAdmin):
     list_display = ('display_number', 'title', 'referent', 'reading', 'publication', 'thumbnail', )
 
     search_fields = ('referent', 'title', )
-    date_hierarchy = 'reading'
+    # date_hierarchy = 'reading'
     ordering = ('-number', '-publication', )
     list_per_page = 50
 

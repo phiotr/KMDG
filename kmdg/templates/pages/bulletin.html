@@ -1,11 +1,12 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block content %}
     <div id="bulletin-body">
         <table class="noborder maxwidth"  style="table-layout: fixed;">
             <tbody>
                 <tr>
-                    <td rowspan="3" class="logo"><img src="{{STATIC_URL}}images/kmdg_logo.png" alt="Logo KMDG"/></td>
+                    <td rowspan="3" class="logo"><img src="{% static 'images/kmdg_logo.png' %}" alt="Logo KMDG"/></td>
                     <th colspan="2" class="bulletin-h2">BIULETYN</th>
                     <td rowspan="3" class="logo right">{% if bulletin.cover %}<img src="{{ bulletin.cover.url }}" alt="Okładka numeru"/>{% endif %}</td>
                 </tr>

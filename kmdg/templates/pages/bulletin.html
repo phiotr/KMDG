@@ -39,7 +39,11 @@
         
         <h1 class="center">{{ bulletin.title }}</h1>
 <!-- TRESC BIULETYNU -->
-        {{ bulletin.content|safe }}
+        {% if bulletin.content %}
+            {{ bulletin.content|safe }}
+        {% else %}
+            <div class=center><img src="http://icons.iconarchive.com/icons/martz90/hex/512/warning-icon.png"/><p class="error center summary">Przepraszamy, wybrany biuletyn nie jest jeszcze dostępn.</p></div>
+        {% endif %}
 <!-- KONIEC BIULETYNU -->
         <br/><hr/>
         <p class="summary"><b>Redakcja:&nbsp;</b>{% for editor in bulletin.editors.all %}{{ editor }}, {% endfor %}KMDG. Logo KMDG wykonał Grzegorz Rygielski.</p>

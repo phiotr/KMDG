@@ -103,7 +103,7 @@ class BulletinModel(models.Model):
     tag = models.ForeignKey(TagModel, verbose_name=u"Studium", null=True, blank=True)
 
     title = models.CharField(verbose_name=u"Temat", max_length=500)
-    content = models.TextField(verbose_name=u"Treść biuletynu")
+    content = models.TextField(verbose_name=u"Treść biuletynu", blank=True, null=True)
 
     editors = models.ManyToManyField(EditorModel, verbose_name=u"Redaktorzy")
 

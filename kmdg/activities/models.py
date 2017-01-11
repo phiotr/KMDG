@@ -46,7 +46,6 @@ class CalendarModel(models.Model):
         finally:
             return bulletin
 
-    #is_upcoming.__name__ = "Przyszle"
     is_upcoming.short_description = u"Nadchodzące"
     is_upcoming.boolean = True
 

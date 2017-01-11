@@ -16,8 +16,7 @@ class CalendarModel(models.Model):
     referent = models.CharField(verbose_name="Prelegent", max_length=300)
     number_of_meeting = models.SmallIntegerField(verbose_name="Numer spotkania", unique=True,
         help_text=u"Jeśli istnieje biuletyn przypisany do tego spotkania to zostanie on podlinkowany na stronie Kalendarium")
-    title = models.CharField(verbose_name="Temat", max_length=500,
-        help_text=u"Prognozowany temat wystąpienia")
+    title = models.CharField(verbose_name="Temat", max_length=500, help_text=u"Prognozowany temat wystąpienia")
 
     def __unicode__(self):
         return u"Spotkanie {0}".format(self.date)

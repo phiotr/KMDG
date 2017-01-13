@@ -1,0 +1,6 @@
+@media print {
+    table {border-collapse: collapse; table-layout:fixed; width: 100%;}
+    table, table td, table th {border: 1px solid black;}
+    table a {color: black; text-decoration: none; font-weight: normal;}
+    div.pagination, .pagination-header {display: none;}
+}

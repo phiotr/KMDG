@@ -19,7 +19,6 @@ admin.autodiscover()
 handler404 = app_views.view_404
 handler500 = app_views.view_500
 
-print(settings.STATIC_ROOT)
 urlpatterns = [
     url(r'^$', app_views.view_home),
 

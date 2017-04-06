@@ -31,7 +31,7 @@ class BulletinAdmin(admin.ModelAdmin):
     list_per_page = 50
 
     class Media:
-        js = ('/static/js/ckeditor/ckeditor.js', '/static/js/html_editor.js')
+        js = ('/static/js/html_editor.js', '/static/js/ckeditor/ckeditor.js', )
         css = {'all': ('/static/css/admin_textarea.css', )}
 
 

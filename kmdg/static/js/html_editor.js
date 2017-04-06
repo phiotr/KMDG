@@ -1,6 +1,6 @@
 (function($) {
     $(document).ready(function($) {
-		$("textarea").addClass("ckeditor");
+		CKEDITOR.replace('id_content');
     });
 })(django.jQuery);
 

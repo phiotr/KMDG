@@ -1,0 +1,22 @@
+<h2>System Paths</h2>
+<ul>
+	{% for d in path%}
+		<li>{{d}}</li>
+	{% endfor %}
+</ul>
+
+
+<h2>Libraries</h2>
+<ul>
+	{% for lib in libs %}
+		<li>{{lib}}</li>
+	{% endfor %}
+</ul>
+
+
+<h2>Environment</h2>
+<ul>
+	{% for e,v in env.items %}
+		<li>{{e}} = {{v}}</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+import os, sys
+
+# Constans
+project_home = "/home/kmdgru/public_html/"
+python_libs = "/home/kmdgru/pip/"
+
+if project_home not in sys.path:
+    sys.path.append(project_home)
+
+if python_libs not in sys.path:
+    sys.path.append(python_libs)
+
+os.environ["DJANGO_SETTINGS_MODULE"] = "kmdg.settings"
+os.environ["PYTHON_EGG_CACHE"] = "/home/kmdgru/.python_egg_cache"
+
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()

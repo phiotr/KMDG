@@ -6,7 +6,7 @@
 from django.conf import settings
 from django.views import static, generic
 from django.contrib import admin
-from django.contrib import auth
+from django.contrib.auth.views import logout
 from django.conf.urls import include, url
 from .app import views as app_views
 from .activities import views as activities_views
@@ -22,7 +22,7 @@ handler500 = app_views.view_500
 urlpatterns = [
     url(r'^$', app_views.view_home),
 
-    url(r'^admin/logout/$', auth.logout, {'next_page': '/'}),
+    url(r'^admin/logout/$', logout, {'next_page' : '/'}),
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^aktualnosci/$', generic.RedirectView.as_view(url='/aktualnosci/1/')),
@@ -40,7 +40,8 @@ urlpatterns = [
     # Files
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}),
-    
+
     # Dev
-    # url(r'^dev/$', app_views.sysinfo_view),
+    url(r'^dev/info/$', app_views.sysinfo_view),
+    url(r'^dev/install/(?P<package_name>[-\w]+)$', app_views.install_package_view),
 ]

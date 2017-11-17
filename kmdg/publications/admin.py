@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
 #
-#	KMDG -> Publications -> admin
+# KMDG -> Publications -> admin
 #
 
 from django.contrib import admin
 from django.db.models import ManyToManyField
 from django.forms.widgets import CheckboxSelectMultiple
-from ..publications.models import BulletinModel, StorageModel, TagModel, EditorModel, BookModel, SeriesModel, SeriesEntryModel
+from ..publications.models import BulletinModel, StorageModel, TagModel, EditorModel, BookModel
+from ..publications.models import SeriesModel, SeriesEntryModel
 
 
 class BulletinAdmin(admin.ModelAdmin):
@@ -19,7 +20,7 @@ class BulletinAdmin(admin.ModelAdmin):
         ("Biuletyn", {'fields': ['title', 'cover', 'content']}),
     ]
 
-    formfield_overrides  = {
+    formfield_overrides = {
         ManyToManyField: {'widget': CheckboxSelectMultiple, 'help_text': ''},
     }
 
@@ -29,10 +30,6 @@ class BulletinAdmin(admin.ModelAdmin):
     # date_hierarchy = 'reading'
     ordering = ('-number', '-publication', )
     list_per_page = 50
-
-    class Media:
-        js = ('/static/js/html_editor.js', '/static/js/ckeditor/ckeditor.js', )
-        css = {'all': ('/static/css/admin_textarea.css', )}
 
 
 class EditorAdmin(admin.ModelAdmin):

@@ -9,19 +9,14 @@ from ..activities.models import CalendarModel, NewsModel
 
 
 class CalendarAdmin(admin.ModelAdmin):
-
     list_display = ('date', 'referent', 'title', 'number_of_meeting', 'has_bulletin', 'is_upcoming', )
     list_display_links = ('date', 'title', )
-
-    # date_hierarchy = 'date'
     search_fields = ('referent', 'title', )
-
     ordering = ('-date',)
     list_per_page = 50
 
 
 class NewsAdmin(admin.ModelAdmin):
-
     list_display = ('__unicode__', 'preview', )
 
     class Media:

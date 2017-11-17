@@ -1,0 +1,5 @@
+Pillow
+django-ckeditor
+django-js-asset
+
+

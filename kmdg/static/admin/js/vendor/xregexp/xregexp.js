@@ -1,4 +1,8 @@
-egExp v2.0.0
+
+/***** xregexp.js *****/
+
+/*!
+ * XRegExp v2.0.0
  * (c) 2007-2012 Steven Levithan <http://xregexp.com/>
  * MIT License
  */
@@ -2301,5 +2305,4 @@ XRegExp = XRegExp || (function (undef) {
     });
 
 }(XRegExp));
-
 

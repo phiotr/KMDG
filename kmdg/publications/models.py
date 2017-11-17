@@ -5,21 +5,17 @@
 #
 
 import os
-
-from django import forms
+import logging
 from django.conf import settings
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.contrib.auth.models import User
-
-from ..app.image_utils import create_thumbnail, is_image
+from ckeditor_uploader import fields as ckefields
+from ..app.image_utils import create_thumbnail
 from ..app.media_utils import get_absolute_path_of_file
 from ..app.mimetypes import get_icon_by_extension
 from ..app.roman import convert2roman
 
-# import the logging library
-import logging
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -103,7 +99,7 @@ class BulletinModel(models.Model):
     tag = models.ForeignKey(TagModel, verbose_name=u"Studium", null=True, blank=True)
 
     title = models.CharField(verbose_name=u"Temat", max_length=500)
-    content = models.TextField(verbose_name=u"Treść biuletynu", blank=True, null=True)
+    content = ckefields.RichTextUploadingField(verbose_name=u"Treść biuletynu", blank=True, null=True)
 
     editors = models.ManyToManyField(EditorModel, verbose_name=u"Redaktorzy")
 
@@ -190,7 +186,6 @@ class BulletinModel(models.Model):
 
     class Meta:
         """Metadane relacji obiektu z baza danych"""
-
         verbose_name = u'Biuletyn'
         verbose_name_plural = u'Biuletyny'
 

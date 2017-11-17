@@ -9,9 +9,9 @@ from ..app.today import today
 from ..app.trimhtml import html_preview
 from ..publications.models import BulletinModel
 
+
 class CalendarModel(models.Model):
     """Kalendarium spotkań"""
-
     date = models.DateField(verbose_name=u"Data", help_text="DD.MM.YYYY")
     referent = models.CharField(verbose_name="Prelegent", max_length=300)
     number_of_meeting = models.SmallIntegerField(verbose_name="Numer spotkania", unique=True,
@@ -36,10 +36,9 @@ class CalendarModel(models.Model):
     def get_bulletin(self):
         """Pobranie biuletynu powiazanego porzez numer spotkania"""
         try:
-
             bulletin = BulletinModel.objects.get(number_of_meeting=self.number_of_meeting)
         # Brak buletynu, lub wiecej jak jeden
-        except:
+        except Exception:
             bulletin = None
 
         finally:
@@ -47,7 +46,6 @@ class CalendarModel(models.Model):
 
     is_upcoming.short_description = u"Nadchodzące"
     is_upcoming.boolean = True
-
     has_bulletin.short_description = u"Posiada biuletyn"
     has_bulletin.boolean = True
 
@@ -58,7 +56,6 @@ class CalendarModel(models.Model):
 
 class NewsModel(models.Model):
     """Aktualności"""
-
     date = models.DateField(verbose_name=u"Data", help_text="DD.MM.YYYY")
     description = models.TextField(verbose_name=u"Opis")
 

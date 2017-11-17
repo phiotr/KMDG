@@ -11,6 +11,7 @@ from django.conf.urls import include, url
 from .app import views as app_views
 from .activities import views as activities_views
 from .gallery import views as gallery_views
+from .publications import views as publication_views
 
 
 admin.autodiscover()
@@ -40,6 +41,11 @@ urlpatterns = [
     # Files
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}),
+
+    # CKEditor
+    #url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^ckeditor/upload/', publication_views.ckeditor_upload_wrapper, name='ckeditor_upload'),
+    url(r'^ckeditor/browse/', publication_views.ckeditor_browse_wrapper, name='ckeditor_browse'),
 
     # Dev
     url(r'^dev/info/$', app_views.sysinfo_view),

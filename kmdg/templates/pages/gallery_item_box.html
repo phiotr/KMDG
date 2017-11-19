@@ -1,0 +1,11 @@
+<div class="entry"> <!-- ENTRY -->
+    <div class="icon-info">
+        <img src="{{gallery.get_gallery_cover}}" alt="Okładka"/>
+    </div>
+    <div class="content-info">
+        <span class="date" title="Data utworzenia">{{ gallery.create_date }}</span>
+        <p class="item-header"><a href="/galerie/{{gallery.id}}/">{{ gallery.title }}</a> <i>({{gallery.photo_count}} zdjęć)</i></p>
+        <p class="item-body">{{gallery.description|safe }}</p>
+    </div>
+    <br/>
+</div> <!-- END OF ENTRY -->

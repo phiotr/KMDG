@@ -1,9 +1,9 @@
 <div class="entry maxwidth"> <!-- ENTRY -->
 
-    <div class="date-info">
+    <div class="icon-info">
             <span class="big-text skin-color" title="{{ event.date|date:'l, d.m.Y' }}">{{ event.date|date:'d E' }}</span>
     </div>
-    <div class="event-info">
+    <div class="content-info">
             <span class="meeting">Spotkanie nr {{ event.number_of_meeting }}</span>
             <p class="referent">{{ event.referent }}</p>
             <p class="topic">{{event.title}}</p>
@@ -13,5 +13,4 @@
             </span>
             {% endif %}
     </div>
-
 </div> <!-- END OF ENTRY -->

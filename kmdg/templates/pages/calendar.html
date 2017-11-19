@@ -3,16 +3,12 @@
 
 {% block content %}
     <h2>Kalendarium spotkań</h2>
-
-    <section id="calendar"> <!-- CALENDAR -->
-
+    <section id="calendar" class="iterable">
         {% for event in calendar_page.object_list %}
             {% include 'pages/calendar_event_box.html' %}
         {% empty %}
             <p class="error">Nie zaplanowano jeszcze żadnych spotkań</p>
         {% endfor %}
     </section>
-
     {% insert_pagination calendar_page url %}
-
 {% endblock %}

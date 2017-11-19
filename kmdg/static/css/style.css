@@ -106,23 +106,26 @@
     section span.goto{margin-bottom:25px;float:right;}
     section div.box {clear:both;padding:10px 20px;margin-bottom:25px;}
     section div.box img {border: 1px solid;}
-    section div.box {border-radius: 10px;border-top: 3px solid; border-bottom: 1px dashed;border-color:#BFBFBF;}
-    section div.box table td {vertical-align:top;}
-    section div.box table td p {text-align:justify;}
-    section div.box table td.gallery-cover {width:265px;text-align:left;vertical-align:top;}
-    section div.box table th {text-align:left;}
-    
     #upcoming{border-collapse:separate;border-spacing:10px;}
 
-    #calendar p {text-indent: 0px;}
-    #calendar div.entry {display: block;border-top: 1px solid;clear: both;min-height: 100px;margin-bottom:15px;}
-    #calendar div.date-info {width: 30%;float: left;}
-    #calendar div.event-info {width: 70%;float: right;}
+    /* calendar, news & gallery */
+    .iterable .entry {display:block; clear:both; min-height:100px; margin-bottom:15px; border-top:1px solid black;}
+    .iterable div.icon-info {width: 22%;float: left;}
+    .iterable div.content-info {width: 78%;float: right;}
+    .iterable p {text-indent: 0px;}
+    .iterable .item-header {font-weight: bold; margin-bottom:10px;}
+    .iterable .item-body {clear: both;}
 
     #calendar .meeting, #calendar .goto {float: right;margin:0px;}
     #calendar .referent {font-weight: bold;}
     #calendar .topic {font-style: italic;}
 
+    #news_list{}
+
+    #gallery_list .entry{min-height:200px;}
+    #gallery_list .icon-info img {width: 80%;margin-bottom:50px;}
+
+    /* pagination */
     .pagination-header {margin-top: 50px;}
     div.pagination {display: block;clear: both;line-height: 2.5;text-align: center;font-weight:normal;font-family: "Opensans";font-weight:bold;margin:auto;}
     div.pagination a, div.pagination a:visited, div.pagination span.current-page {text-decoration: none;padding: 5px 15px;font-size: 14px;}

@@ -43,11 +43,9 @@ urlpatterns = [
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT}),
 
     # CKEditor
-    #url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^ckeditor/upload/', publication_views.ckeditor_upload_wrapper, name='ckeditor_upload'),
     url(r'^ckeditor/browse/', publication_views.ckeditor_browse_wrapper, name='ckeditor_browse'),
 
     # Dev
-    url(r'^dev/info/$', app_views.sysinfo_view),
-    url(r'^dev/install/(?P<package_name>[-\w]+)$', app_views.install_package_view),
+    #url(r'^dev/info/$', app_views.sysinfo_view),
 ]

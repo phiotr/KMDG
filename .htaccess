@@ -1,4 +1,6 @@
 RewriteEngine On
 RewriteBase /
+RewriteRule ^(static/.*)$ - [L]
+RewriteRule ^(media/.*)$ - [L]
 RewriteRule ^(dispatch\.wsgi/.*)$ - [L]
 RewriteRule ^(.*)$ dispatch.wsgi/$1 [QSA,PT,L]

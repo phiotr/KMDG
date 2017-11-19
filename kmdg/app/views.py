@@ -48,15 +48,3 @@ def sysinfo_view(_):
     import sys, os, pip
     context = {'path': sys.path, 'env': os.environ, 'libs': pip.get_installed_distributions()}
     return render_to_response('dev/sysinfo.html', context)
-
-
-@login_required
-@user_passes_test(lambda user: user.is_active and user.is_superuser)
-def install_package_view(_, package_name):
-    import pip
-    print(package_name)
-    try:
-        ret_code = pip.main(['install', '--user', package_name])
-        return render_to_response('dev/pip-result.html', {'ret_code': ret_code})
-    except Exception as e:
-        return render_to_response('dev/pip-error.html', {'exception': str(e)})

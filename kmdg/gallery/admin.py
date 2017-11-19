@@ -14,18 +14,11 @@ class PhotoInLine(admin.TabularInline):
 
 
 class GalleryAdmin(admin.ModelAdmin):
-
-    fieldsets = (
-        (u"Informacje o galerii", {'fields': ['title', 'description']}), )
-
+    fieldsets = ((u"Informacje o galerii", {'fields': ['title', 'description']}), )
     inlines = [PhotoInLine]
-
     list_display = ('title', 'create_date', 'photo_count', )
 
     class Media:
-        js = ('/static/js/ckeditor/ckeditor.js',
-                '/static/js/html_editor.js',)
-
         css = {'all': ('/static/css/admin_textarea.css', )}
 
 

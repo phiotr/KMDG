@@ -5,6 +5,7 @@
 #
 
 from django.db import models
+from ckeditor_uploader import fields as ckefields
 from ..app.today import today
 from ..app.trimhtml import html_preview
 from ..publications.models import BulletinModel
@@ -57,7 +58,7 @@ class CalendarModel(models.Model):
 class NewsModel(models.Model):
     """Aktualności"""
     date = models.DateField(verbose_name=u"Data", help_text="DD.MM.YYYY")
-    description = models.TextField(verbose_name=u"Opis")
+    description = ckefields.RichTextUploadingField(verbose_name=u"Opis")
 
     def __unicode__(self):
         return u"{0}".format(self.date)

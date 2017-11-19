@@ -12,6 +12,7 @@ from ..app.media_utils import get_absolute_path_of_file
 from django.db import models
 from django.db.models.signals import pre_save, post_save, pre_delete
 from django.dispatch import receiver
+from ckeditor_uploader import fields as ckefields
 
 
 # Rozmiar poglądowego obrazka
@@ -27,11 +28,11 @@ GALLERY_DIR = u"gallery/"
 # Plik okładki, jeśli galeria nie posiada swoich zdjęć
 NO_PHOTOS_IN_URL = r"/static/images/photo-camera.png"
 
+
 class GalleryModel(models.Model):
 
     title = models.CharField(verbose_name=u"Tytuł", max_length=300)
-    description = models.TextField(verbose_name=u"Opis")
-
+    description = ckefields.RichTextUploadingField(verbose_name=u"Opis")
     create_date = models.DateField(verbose_name=u"Data utworzenia", editable=False, auto_now_add=True)
 
     def __unicode__(self):
@@ -49,11 +50,10 @@ class GalleryModel(models.Model):
 
         try:
             first_url = PhotoModel.objects.filter(gallery=self.pk)[0].thumb.url
-
         except Exception:
             first_url = NO_PHOTOS_IN_URL
 
-        return """<img src="{0}" alt="Okładka"/>""".format(first_url)
+        return first_url
 
     photo_count.short_description = "Liczba fotografii"
     get_gallery_cover.short_description = u"Okładka galerii"
@@ -90,9 +90,10 @@ class PhotoModel(models.Model):
     description = models.CharField(verbose_name=u"Opis pod zjęciem", max_length=255, null=True, blank=True)
 
     def __unicode__(self):
+        uni = u""
         try:
             uni = u"Zdjęcie({0})".format(self.photo.file.name)
-        except:
+        except Exception:
             uni = "Obrazek"
         finally:
             return uni

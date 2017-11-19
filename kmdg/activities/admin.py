@@ -19,10 +19,6 @@ class CalendarAdmin(admin.ModelAdmin):
 class NewsAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'preview', )
 
-    class Media:
-        js = ('/static/js/ckeditor/ckeditor.js', '/static/js/html_editor.js')
-        css = {'all': ('/static/css/admin_textarea.css', )}
-
 
 admin.site.register(CalendarModel, CalendarAdmin)
 admin.site.register(NewsModel, NewsAdmin)

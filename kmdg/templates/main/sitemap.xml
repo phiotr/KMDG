@@ -9,6 +9,7 @@
     <url>
         <loc>{{domain_url}}/aktualnosci/{{idx}}/</loc>
         <changefreq>daily</changefreq>
+        <priority>0.6</priority>
     </url>
     {% endfor %}
     {% for idx in calendar_tabs %}

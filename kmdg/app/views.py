@@ -7,6 +7,7 @@ from datetime import date
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.cache import cache_page
 from ..activities.models import CalendarModel, NewsModel
 from ..activities.views import number_of_news_pages, number_of_calendar_pages
 from ..gallery.views import get_list_of_gall_indexes
@@ -39,6 +40,7 @@ def view_home(_):
 
 
 @csrf_exempt
+@cache_page(2 * 24 * 60 * 60)  # 2 days
 def view_sitemap(_):
     domain_url = 'http://kmdg.grudziadz.pl'
     context = {'domain_url': domain_url,

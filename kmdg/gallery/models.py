@@ -181,15 +181,23 @@ def zip_post_save_handler(sender, **kwargs):
     zipfile_model = kwargs['instance']
     gallery_model = zipfile_model.gallery
 
+    if not zipfile.is_zipfile(zipfile_model.zip):
+        zipfile_model.delete()
+        return
+
     with zipfile.ZipFile(zipfile_model.zip, 'r') as archive:
         for entry in archive.namelist():
             file_name = entry.split('/')[-1]
             file_body = archive.read(entry)
+            file_stream = io.BytesIO(file_body)
 
-            if is_image(io.BytesIO(file_body)):
+            if is_image(file_stream):
                 PhotoModel(gallery=gallery_model,
                            photo=SimpleUploadedFile(name=file_name, content=file_body),
-                           description='')\
-                    .save()
+                           description='').save()
+            else:
+                pass # skip non-image files
+
+            file_stream.close()
 
     zipfile_model.delete()

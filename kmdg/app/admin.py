@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 #
-#	KMDG -> App -> admin
+# KMDG -> App -> admin
 #
 
 from django.contrib import admin
 from ..app.models import SkinModel
 
-class SkinAdmin(admin.ModelAdmin):
 
+class SkinAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {'fields': ['skin']}),
         (u"Daty obowiązywania", {'fields': ['start', 'stop']}),

@@ -6,22 +6,16 @@ Moduł poświęcony skalowaniu plików graficznych
 try:
     import Image
 except ImportError:
-    import PIL as Image
-
-import imghdr
+    import PIL.Image as Image
 
 
 def is_image(some_file):
     """Test, czy wskazany plik jest plikiem graficznym, czy tez nie"""
-
     try:
-        return not imghdr.what(some_file)
-
+        import imghdr
+        return imghdr.what(some_file) in ('jpeg', 'jpg', 'tiff', 'gif', 'png')
     except IOError as e:
-        # plik nie istnieje, albo jakies inne klopoty
-        print(e)
-    finally:
-        return(False)
+        return False
 
 
 def create_thumbnail(src_image, out_image, scale):
@@ -36,9 +30,7 @@ def create_thumbnail(src_image, out_image, scale):
     try:
         img = Image.open(src_image)
         img.thumbnail(scale, Image.ANTIALIAS)
-
     except Exception as e:
         print(e)
-
     else:
         img.save(out_image)

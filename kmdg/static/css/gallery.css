@@ -12,4 +12,5 @@
     #preview-table td.photo {background: white;box-shadow: 1px 1px 2px 3px #CACCCA;text-align:center;}
     #preview-table p {text-indent: 0px;font-family: "OpenSans";font-weight: bold;max-width:500px;line-height:1.5;text-align:left;margin: 0px 15px;}
 
+    #photo-img {max-width: 80%; max-height: 90%;}
 } /* END OF MEDIA SCREEN */

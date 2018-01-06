@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{domain_url}}/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    {% for idx in activity_tabs %}
+    <url>
+        <loc>{{domain_url}}/aktualnosci/{{idx}}/</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    {% endfor %}
+    {% for idx in calendar_tabs %}
+    <url>
+        <loc>{{domain_url}}/kalendarium/{{idx}}/</loc>
+        {% if forloop.first %}
+        <changefreq>daily</changefreq>
+        <priority>0.75</priority>
+        {% else %}
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+        {% endif %}
+    </url>
+    {% endfor %}
+
+    <url>
+        <loc>{{domain_url}}/publikacje/biuletyny/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    {% for year in bulletin_years %}
+    <url>
+        <loc>{{domain_url}}/publikacje/biuletyny/rok/{{year}}/</loc>
+        <changefreq>{% if forloop.first %}weekly{% elif forloop.counter == 2 %}monthly{% else %}never{% endif %}</changefreq>
+    </url>
+    {% endfor %}
+    <url>
+        <loc>{{domain_url}}/publikacje/ksiazki/</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+    <url>
+        <loc>{{domain_url}}/publikacje/cykle/</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+
+    <url>
+        <loc>{{domain_url}}/galerie/</loc>
+    </url>
+    {% for idx in galleries_list %}
+    <url>
+        <loc>{{domain_url}}/galerie/{{idx}}/</loc>
+        <changefreq>never</changefreq>
+        <priority>0.4</priority>
+    </url>
+    {% endfor %}
+    <url>
+        <loc>{{domain_url}}/zarzad/</loc>
+        <changefreq>yearly</changefreq>
+    </url>
+</urlset>

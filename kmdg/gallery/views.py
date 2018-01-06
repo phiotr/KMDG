@@ -8,6 +8,10 @@ from django.views.decorators.csrf import csrf_exempt
 from ..gallery.models import GalleryModel, PhotoModel
 
 
+def get_list_of_gall_indexes():
+    return [gallery.id for gallery in GalleryModel.objects.all()]
+
+
 @csrf_exempt
 def view_gallery_list(_):
     """Strona zawierająca listę wszystkich galerii"""

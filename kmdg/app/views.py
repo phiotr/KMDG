@@ -8,6 +8,9 @@ from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views.decorators.csrf import csrf_exempt
 from ..activities.models import CalendarModel, NewsModel
+from ..activities.views import number_of_news_pages, number_of_calendar_pages
+from ..gallery.views import get_list_of_gall_indexes
+from ..publications.views import years_list
 
 
 @csrf_exempt
@@ -33,6 +36,19 @@ def view_home(_):
     events = CalendarModel.objects.filter(date__gte=date.today()).order_by('date')
     context = {'sitetitle': u'Strona główna', 'news': news, 'events': events}
     return render_to_response('pages/home.html', context)
+
+
+@csrf_exempt
+def view_sitemap(_):
+    domain_url = 'http://kmdg.grudziadz.pl'
+    context = {'domain_url': domain_url,
+               'activity_tabs': range(1, number_of_news_pages() +1),
+               'calendar_tabs': range(1, number_of_calendar_pages() + 1),
+               'galleries_list': get_list_of_gall_indexes(),
+               'bulletin_years': years_list(),
+               }
+
+    return render_to_response('main/sitemap.xml', context, content_type='application/xml')
 
 
 @csrf_exempt

@@ -12,6 +12,18 @@ from django.views.decorators.csrf import csrf_exempt
 from ..activities.models import NewsModel, CalendarModel
 
 
+# Information for sitemap
+def number_of_news_pages():
+    count = NewsModel.objects.count()
+    return (count // settings.NEWS_PER_PAGE) + (1 if count % settings.NEWS_PER_PAGE > 0 else 0)
+
+
+def number_of_calendar_pages():
+    count = CalendarModel.objects.count()
+    return (count // settings.EVENTS_PER_PAGE) + (1 if count % settings.EVENTS_PER_PAGE > 0 else 0)
+
+
+# Pages
 @csrf_exempt
 def view_news(_, page_nr=1):
     """Widok strony aktualności"""

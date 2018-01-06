@@ -8,11 +8,10 @@ from ...app.models import SkinModel, DEFAULT_SKIN
 
 register = template.Library()
 
+
 @register.simple_tag
 def get_skin():
-    
     td = today()
-
     skins = SkinModel.objects.filter(start__lte=td, stop__gte=td).order_by('-pk')
 
     if skins:

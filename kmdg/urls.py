@@ -22,6 +22,7 @@ handler500 = app_views.view_500
 
 urlpatterns = [
     url(r'^$', app_views.view_home),
+    url(r'^sitemap.xml$', app_views.view_sitemap),
 
     url(r'^admin/logout/$', logout, {'next_page' : '/'}),
     url(r'^admin/', include(admin.site.urls)),
@@ -47,5 +48,5 @@ urlpatterns = [
     url(r'^ckeditor/browse/', publication_views.ckeditor_browse_wrapper, name='ckeditor_browse'),
 
     # Dev
-    #url(r'^dev/info/$', app_views.sysinfo_view),
+    url(r'^dev/info/$', app_views.sysinfo_view),
 ]
